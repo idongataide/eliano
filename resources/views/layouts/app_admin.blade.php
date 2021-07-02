@@ -61,9 +61,17 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/cart.css')}}"/> 
     
     @yield('css')
+    <style>
+    .skin-blue .main-header .navbar, .skin-blue .main-header .logo  {
+       background-color:#c7ad00 !important;
+    }
+    .box.box-primary {
+    border-top-color: #333  !important;
+}
+    </style>
 </head>
-
-<body class="skin-blue sidebar-collapse sidebar-mini">
+<!-- sidebar-collapse -->
+<body class="skin-blue  sidebar-mini">
 @if (!Auth::guest())
     <div class="wrapper">
         <!-- Main Header -->
@@ -72,7 +80,7 @@
             <!-- Logo -->
             <a href="{{url('/')}}" class="logo">
               <span class="logo-mini"><b>Eliana Elio</b></span>
-              <span class="logo-lg">{{ $basic->name_prefix }}</span>
+              <span class="logo-lg">Elianaelio Coperative</span>
             </a>
 
             <!-- Header Navbar -->

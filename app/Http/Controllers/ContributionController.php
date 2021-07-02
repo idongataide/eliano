@@ -151,6 +151,7 @@ class ContributionController extends Controller
         $date = date("Y-m-d h:m:s");
         $merchant = user::where('referby',$request->contributor_id)->first();
         $user = user::where('id',$request->contributor_id)->first();
+        $basic=company::find(1);
 
         $merchant_id = "";
 
