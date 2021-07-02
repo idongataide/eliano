@@ -1,0 +1,252 @@
+.login-section {
+    background-image: url("/backend/assets/images/hotel_bg2.jpg");
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 35%;
+    margin: 0 auto;
+    background: rgba($color-white, .8) !important;
+    box-shadow: 1px 1px 2px rgba($color-black, .5);
+    
+    
+    &__heading{
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 600px) { 
+        width: 50%;
+        
+    }
+
+    @media only screen and (max-width: 400px) { 
+        width: 80%;
+        
+    }
+}
+
+
+
+
+
+.form {
+    &__group:not(:last-child) {
+        margin-bottom: .2rem;
+    }
+
+    &__input {
+        font-size: 1em;
+        font-family: inherit;
+        color: inherit;
+        padding: 1rem 1.5rem;
+        border-radius: 2px;
+        background-color: rgba($color-white, .5);
+        border: none;
+        border-bottom: 3px solid transparent;
+        width: 100%; 
+        display: block;
+        transition: all .3s;
+
+        // @include respond(tab-port){
+        //     width: 100%;
+        // }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            border-bottom: 3px solid $color-primary;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid $color-secondary;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-2;
+        }
+    }
+
+   
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+
+    &__radio-group {
+        width: 49%;
+        display: inline-block;
+
+        // @include respond(tab-port){
+        //     width: 100%;
+        //     margin-bottom: 2rem;
+        // }
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-label {
+        font-size: 1rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+    }
+
+    &__radio-button {
+        height: 3rem;
+        width: 3rem;
+        border: 5px solid $color-primary;
+        border-radius: 50%;
+        display: inline-block;
+        position: absolute; 
+        left: 0;
+        top: -.4rem;
+
+
+        &::after {
+            content: "";
+            display: block;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color-primary;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+    }
+
+    &__radio-input:checked ~ &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+}
+
+
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: .5rem 2rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;    
+        
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-0.1rem);
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+    
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color:$color-white;
+        }   
+    
+    }
+
+    &--green {
+        background-color: $color-secondary;
+        color: $color-white;
+
+        &::after {
+            background-color:$color-secondary;
+        }   
+    
+    }
+    
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }  
+    
+    
+    &--animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: 1.2rem;
+        text-transform: none;
+        color: $color-black;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-secondary;
+        padding: .5rem; 
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-secondary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+
+    
+}
+
+.checkbox {
+    margin-top: -1px;
+}

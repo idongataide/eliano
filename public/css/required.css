@@ -1,0 +1,16 @@
+:required {
+    background: white;
+  }
+
+  input:required {
+    box-shadow: 4px 4px 20px rgba(240, 235, 235, 0.986);
+  }
+
+  input:required:focus {
+    border: 1px solid red;
+    outline: none;
+  }  
+
+  input:required:hover {
+    opacity: 1;
+  }
